@@ -1,5 +1,3 @@
-FROM ubuntu:14.04
-MAINTAINER hsj89
-RUN apt-get install -y apache2
-COPY index.html /var/www/html/
-EXPOSE 80
+FROM httpd:2.4
+WORKDIR /usr/local/apache2/htdocs/
+COPY index.html /usr/local/apache2/htdocs/
