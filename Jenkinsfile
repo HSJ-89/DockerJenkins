@@ -13,13 +13,18 @@ pipeline {
              url: 'https://github.com/HSJ-89/DockerJenkins.git'
       }
     }
-     stage('Building image') {
+    stage('Building image') {
       steps{
         script {
           docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
+	stage('Deploy echo') {
+		steps {
+			echo "Hello...!!!!"
+			}
+	}
 	stage('Deploy Image') {
       steps{
         script {
@@ -28,6 +33,6 @@ pipeline {
           }
         }
       }
-	 }
+	}
   }
 }
