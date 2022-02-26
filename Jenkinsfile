@@ -2,6 +2,7 @@ pipeline {
     environment {
     registry = "hsj89/install"
     registryCredential = 'dockerhub'
+	dockerImage = ''
     }  
   
   agent any  
@@ -16,7 +17,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + "v2B":$BUILD_NUMBER"
         }
       }
     }
