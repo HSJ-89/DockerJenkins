@@ -1,7 +1,7 @@
 pipeline {  
     environment {
     registry = "hsj89/install"
-    registryCredential = 'dockerhub'
+    registryCredential = 'Dockerhub'
 	dockerImage = ''
     }  
   
